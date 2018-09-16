@@ -1,5 +1,5 @@
 *.dll
-package/*
+packages/*
 WSDion/bin/*
 WSDion/obj/*
 CLIDion/bin/*
