@@ -10,4 +10,4 @@ Versão Web Service da ferramenta, para que possa ser utilizada por outros projet
 
 Versão em linha de comando, para um acesso mais rápido às notas do dion, sem precisar acessar através do navegador.
 
-![Exemplo de execução](https://raw.githubusercontent.com/cgreinhold/WSDion/tree/master/img/example.gif)
+![Exemplo de execução](https://github.com/CGReinhold/WSDion/blob/master/img/example.gif)
