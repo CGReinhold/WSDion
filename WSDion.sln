@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSDion", "WSDion\WSDion.csproj", "{4FDEBBCB-35BF-4B3B-8A51-BF320202983F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLIDion", "CLIDion\CLIDion.csproj", "{A0436F2C-E724-40D8-A545-3B2AFB213F8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4FDEBBCB-35BF-4B3B-8A51-BF320202983F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FDEBBCB-35BF-4B3B-8A51-BF320202983F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FDEBBCB-35BF-4B3B-8A51-BF320202983F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0436F2C-E724-40D8-A545-3B2AFB213F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0436F2C-E724-40D8-A545-3B2AFB213F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0436F2C-E724-40D8-A545-3B2AFB213F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0436F2C-E724-40D8-A545-3B2AFB213F8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

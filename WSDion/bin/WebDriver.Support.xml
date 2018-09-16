@@ -300,17 +300,17 @@
             </summary>
             <param name="e">A <see cref="T:OpenQA.Selenium.Support.Events.WebElementEventArgs"/> that contains the event data.</param>
         </member>
-        <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.OnElementValueChanging(OpenQA.Selenium.Support.Events.WebElementEventArgs)">
+        <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.OnElementValueChanging(OpenQA.Selenium.Support.Events.WebElementValueEventArgs)">
             <summary>
             Raises the <see cref="E:OpenQA.Selenium.Support.Events.EventFiringWebDriver.ElementValueChanging"/> event.
             </summary>
-            <param name="e">A <see cref="T:OpenQA.Selenium.Support.Events.WebElementEventArgs"/> that contains the event data.</param>
+            <param name="e">A <see cref="T:OpenQA.Selenium.Support.Events.WebElementValueEventArgs"/> that contains the event data.</param>
         </member>
-        <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.OnElementValueChanged(OpenQA.Selenium.Support.Events.WebElementEventArgs)">
+        <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.OnElementValueChanged(OpenQA.Selenium.Support.Events.WebElementValueEventArgs)">
             <summary>
             Raises the <see cref="E:OpenQA.Selenium.Support.Events.EventFiringWebDriver.ElementValueChanged"/> event.
             </summary>
-            <param name="e">A <see cref="T:OpenQA.Selenium.Support.Events.WebElementEventArgs"/> that contains the event data.</param>
+            <param name="e">A <see cref="T:OpenQA.Selenium.Support.Events.WebElementValueEventArgs"/> that contains the event data.</param>
         </member>
         <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.OnFindingElement(OpenQA.Selenium.Support.Events.FindElementEventArgs)">
             <summary>
@@ -516,40 +516,6 @@
             should wait for a page to load when setting the <see cref="P:OpenQA.Selenium.IWebDriver.Url"/>
             property.
             </summary>
-        </member>
-        <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.EventFiringTimeouts.ImplicitlyWait(System.TimeSpan)">
-            <summary>
-            Specifies the amount of time the driver should wait when searching for an
-            element if it is not immediately present.
-            </summary>
-            <param name="timeToWait">A <see cref="T:System.TimeSpan"/> structure defining the amount of time to wait.</param>
-            <returns>A self reference</returns>
-            <remarks>
-            When searching for a single element, the driver should poll the page
-            until the element has been found, or this timeout expires before throwing
-            a <see cref="T:OpenQA.Selenium.NoSuchElementException"/>. When searching for multiple elements,
-            the driver should poll the page until at least one element has been found
-            or this timeout has expired.
-            <para>
-            Increasing the implicit wait timeout should be used judiciously as it
-            will have an adverse effect on test run time, especially when used with
-            slower location strategies like XPath.
-            </para>
-            </remarks>
-        </member>
-        <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.EventFiringTimeouts.SetScriptTimeout(System.TimeSpan)">
-            <summary>
-            Specifies the amount of time the driver should wait when executing JavaScript asynchronously.
-            </summary>
-            <param name="timeToWait">A <see cref="T:System.TimeSpan"/> structure defining the amount of time to wait.</param>
-            <returns>A self reference</returns>
-        </member>
-        <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.EventFiringTimeouts.SetPageLoadTimeout(System.TimeSpan)">
-            <summary>
-            Specifies the amount of time the driver should wait for a page to load when setting the <see cref="P:OpenQA.Selenium.IWebDriver.Url"/> property.
-            </summary>
-            <param name="timeToWait">A <see cref="T:System.TimeSpan"/> structure defining the amount of time to wait.</param>
-            <returns>A self reference</returns>
         </member>
         <member name="T:OpenQA.Selenium.Support.Events.EventFiringWebDriver.EventFiringWebElement">
             <summary>
@@ -798,6 +764,24 @@
         <member name="P:OpenQA.Selenium.Support.Events.WebElementEventArgs.Element">
             <summary>
             Gets the element used for the action.
+            </summary>
+        </member>
+        <member name="T:OpenQA.Selenium.Support.Events.WebElementValueEventArgs">
+            <summary>
+            Provides data for events related to finding elements.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Support.Events.WebElementValueEventArgs.#ctor(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OpenQA.Selenium.Support.Events.WebElementValueEventArgs"/> class.
+            </summary>
+            <param name="driver">The WebDriver instance used for the action.</param>
+            <param name="element">The element used for the action.</param>
+            <param name="value">The new value for the element.</param>
+        </member>
+        <member name="P:OpenQA.Selenium.Support.Events.WebElementValueEventArgs.Value">
+            <summary>
+            Gets the Value that is written to the element
             </summary>
         </member>
         <member name="T:OpenQA.Selenium.Support.Extensions.WebDriverExtensions">
@@ -1778,11 +1762,11 @@
         </member>
         <member name="M:OpenQA.Selenium.Support.UI.ExpectedConditions.ElementToBeSelected(OpenQA.Selenium.IWebElement,System.Boolean)">
             <summary>
-            An expectation for checking if the given element is selected.
+            An expectation for checking if the given element is in correct state.
             </summary>
             <param name="element">The element.</param>
             <param name="selected">selected or not selected</param>
-            <returns><see langword="true"/> given element is selected.; otherwise, <see langword="false"/>.</returns>
+            <returns><see langword="true"/> given element is in correct state.; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:OpenQA.Selenium.Support.UI.ExpectedConditions.ElementSelectionStateToBe(OpenQA.Selenium.IWebElement,System.Boolean)">
             <summary>
@@ -2067,12 +2051,12 @@
             Gets all of the selected options within the select element.
             </summary>
         </member>
-        <member name="M:OpenQA.Selenium.Support.UI.SelectElement.SelectByText(System.String)">
+        <member name="M:OpenQA.Selenium.Support.UI.SelectElement.SelectByText(System.String,System.Boolean)">
             <summary>
             Select all options by the text displayed.
             </summary>
-            <param name="text">The text of the option to be selected. If an exact match is not found,
-            this method will perform a substring match.</param>
+            <param name="text">The text of the option to be selected.</param>
+            <param name="partialMatch">Default value is false. If true a partial match on the Options list will be performed, otherwise exact match.</param>
             <remarks>When given "Bar" this method would select an option like:
             <para>
             &lt;option value="foo"&gt;Bar&lt;/option&gt;

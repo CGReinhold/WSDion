@@ -1,0 +1,7 @@
+*.dll
+package/*
+WSDion/bin/*
+WSDion/obj/*
+CLIDion/bin/*
+CLIDion/obj/*
+CLIDion/User.cs
